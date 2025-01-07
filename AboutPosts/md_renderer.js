@@ -4,8 +4,9 @@ import YAML from 'https://cdn.jsdelivr.net/npm/yaml@2.2.1/browser/index.js';
 
 export async function md_renderer(md_url) {
     try {
+        const rawbaseURL = "https://raw.githubusercontent.com/Whji/Whji.github.io/refs/heads/main/AboutPosts/"
         console.log(`md_url: ${md_url}`);
-        const response = await fetch(md_url);
+        const response = await fetch(`${rawbaseURL}${md_url}`);
         console.log(`response: ${response}`);
         console.log(response);
         if (!response.ok){
