@@ -62,7 +62,7 @@ body,html {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("graphix/mainbox_graphic.webp");
+    background-image: url("Graphix/mainbox_graphic.jpg");
     background-size: cover;
     background-position: 250px;
     opacity: 0.4;
@@ -216,7 +216,7 @@ body,html {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("Graphix/sidebar_graphic.webp");
+    background-image: url("Graphix/sidebar_graphic.jpg");
     background-position: 70% 8%;
     opacity: 0.4;
   }
