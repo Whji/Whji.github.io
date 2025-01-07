@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-44BZTQFWJV');
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whji's Field>About Me</title>
+    <link rel="stylesheet" href="fonts.css"/>
+    <link rel="stylesheet" href="style_for_about_me.css"/>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <a href="index.html">Whji's Field</a>
+      <a href="about_me.html">> About Me</a>
+      <input type="search" placeholder="Search...(not functional yet)">
+      <button id="menu">&#9776</button>
+    </header>
+
+
+    <!-- mainbox -->
+    <div class="box">   
+      <h1>About Me</h1>
+      <div class="background"></div>
+
+      <div class="introdox">
+        <p>저에 대한 소개입니다.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="selfintro">Self Introduction
+        <h4>"내용 없는 사상은 공허하며, 개념 없는 직관은 맹목적이다."<br/> </h4>
+        <p>
+          임마누엘 칸트의 유명한 문구입니다.<br/>
+
+        </p>
+      </div>
+      <div class="Biography">Biography
+        <ul>
+            <li>2021~ KAIST 재학(전산/수리 복수전공)</li>
+            <li>2019~2020 경기북과학고등학교 재학 (조기졸업)</li>
+            <li>2016~2018 동백중학교 재학</li>
+            <li>2010~2015 용인백현초등학교 재학</li>
+            <li>2005~ 경기도 용인시 거주</li>
+            <li>2003~2005 경기도 성남시 거주</li>
+          </ul>
+      </div>
+
+
+    </div>
+
+    <!-- sidebar -->
+    <nav id="sidebar">
+      <ul>
+        <li><a href="CSField/cs_index.html">CS Field</a>
+          <ul class="subfield">
+            <li><a href="CSField/PortfolioDiary/portfolio_diary_index.html">개발 일지</a></li>
+            <li><a href="CSField/PSStudy/ps_study_index.html">PS study</a></li>
+            <li><a href="CSField/Coursework/coursework_index.html">Coursework</a></li>
+          </ul>
+        </li>
+        <li><a href="MathField/math_index.html">Math Field</a>
+          <ul class="subfield">
+            <li><a href="MathField/Coursework/coursework_index.html">Coursework</a></li>
+            <li><a href="MathField/AboutStatistics/research_field_index.html">Statistics</a></li>
+          </ul>
+        </li>
+        <li><a href="MyDiary/my_diary_index.html">My Diary</a>
+          <ul class="subfield">
+            <li><a href="MyDiary/Diary/diary_index.html">일기/끄적끄적</a></li>
+            <li><a href="MyDiary/Hobby/hobby_index.html">취미생활</a></li>
+          </ul>
+        </li>
+        <div id="aboutme">
+          <a href="about_me.html">About Me</a>
+        </div>
+      </ul>
+    </nav>
+  
+    <footer>
+      <p>Copyright © 지우현 All rights reserved.<br/>
+        Built with <a href="https://getbootstrap.com/" target="_blank" style="color: inherit; text-decoration: underline;">Bootstrap</a> and custom illustrations.<br>
+        Design & Development by <strong>지우현</strong>.</p>
+    </footer>
+
+
+
+    <!-- javascript -->
+    <script>
+      let menu = document.querySelector("#menu");
+      let sidebar = document.querySelector("#sidebar");
+      let mainbox = document.querySelector(".box");
+      let background = document.querySelector(".background");
+      let container = document.querySelector(".container");
+      let showotherblogs = document.querySelector("#other-blogs a");
+      menu.addEventListener("click",()=>{
+        sidebar.classList.toggle("visible");
+        background.classList.toggle("visible");
+        container.classList.toggle("visible");
+      });
+    </script>
+  </body>
+</html>

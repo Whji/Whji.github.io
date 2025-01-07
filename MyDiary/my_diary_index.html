@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-44BZTQFWJV');
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whji's Field>My Diary</title>
+    <link rel="stylesheet" href="../fonts.css"/>
+    <link rel="stylesheet" href="my_diary_index_style.css"/>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <a href="../index.html">Whji's Field</a>
+      <a href="my_diary_index.html">> My Diary</a>
+      <input type="search" placeholder="Search...(not functional yet)">
+      <button id="menu">&#9776</button>
+    </header>
+
+
+    <!-- mainbox -->
+    <div class="box">   
+      <h1>My Diary</h1>
+      <div class="background"></div>
+    </div>
+
+    <div class="container">
+      <div class="Recent_posts">Recent Posts
+        <div class="postlist">
+        </div>
+      </div>
+      <hr/>
+       <div class="Current_working">오늘의 TMI
+        <p>어서 초코칩쿠키를 우유에 말아서 먹으면서 푸린 유튜브 보고 싶군요<br/>
+        쉽지 않아요 개발..<br/>
+        하지만 재밌습니다<br/>
+        이거 보시는 여러분 모두 새해 복 많이 받으세요</p>
+      </div>
+
+    </div> 
+
+    <!-- sidebar -->
+    <nav id="sidebar">
+      <ul>
+        <li><a href="../CSField/cs_index.html">CS Field</a>
+          <ul class="subfield">
+            <li><a href="../CSField/PortfolioDiary/portfolio_diary_index.html">개발 일지</a></li>
+            <li><a href="../CSField/PSStudy/ps_study_index.html">PS study</a></li>
+            <li><a href="../CSField/Coursework/coursework_index.html">Coursework</a></li>
+          </ul>
+        </li>
+        <li><a href="../MathField/math_index.html">Math Field</a>
+          <ul class="subfield">
+            <li><a href="../MathField/Coursework/coursework_index.html">Coursework</a></li>
+            <li><a href="../MathField/AboutStatistics/research_field_index.html">Statistics</a></li>
+          </ul>
+        </li>
+        <li><a href="./my_diary_index.html">My Diary</a>
+          <ul class="subfield">
+            <li><a href="./Diary/diary_index.html">일기/끄적끄적</a></li>
+            <li><a href="./Hobby/hobby_index.html">취미생활</a></li>
+          </ul>
+        </li>
+        <div id="aboutme">
+          <a href="../about_me.html">About Me</a>
+        </div>
+      </ul>
+    </nav>
+  
+    <footer>
+      <p>Copyright © 지우현 All rights reserved.<br/>
+        Built with <a href="https://getbootstrap.com/" target="_blank" style="color: inherit; text-decoration: underline;">Bootstrap</a> and custom illustrations.<br>
+        Design & Development by <strong>지우현</strong>.</p>
+    </footer>
+
+
+
+    <!-- javascript -->
+    <script type="module">
+      import { flinks } from '../AboutPosts/file_links.js';
+      import { md_renderer } from '../AboutPosts/md_renderer.js';
+    
+      const recent_two = flinks.slice(0, 2);
+      const postlist = document.querySelector(".postlist");
+    
+      (async () => {
+        try {
+          const renderedPosts = await Promise.all(recent_two.map(async (content) => {
+              const adjcontent = `../AboutPosts/${content}`;
+              const htmlcont = await md_renderer(adjcontent);
+              console.log(adjcontent);
+              if (htmlcont.metadata.category.split('>')[0].trim() == 'My Diary'){
+                const item = document.createElement("div");
+              item.innerHTML = `
+                <h3>${htmlcont.metadata.title}</h3>
+                <p>${htmlcont.metadata.date}</p>
+                <p>${htmlcont.metadata.category}</p>
+                <p>${htmlcont.htmlcontent.slice(0, 100)}...</p>
+              `;
+              item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${content}`);
+              
+
+              item.addEventListener("click",()=>{
+          const link = item.getAttribute("data-link");
+            window.location.href = link;
+          });
+
+              return item;
+              }
+
+            })
+          );
+
+    
+          renderedPosts.forEach((item) => postlist.appendChild(item));
+        } catch (error) {
+          console.error("Error rendering markdown:", error);
+        }
+      })();
+
+
+    
+      let menu = document.querySelector("#menu");
+      let sidebar = document.querySelector("#sidebar");
+      let background = document.querySelector(".background");
+      let container = document.querySelector(".container");
+    
+      menu.addEventListener("click", () => {
+        sidebar.classList.toggle("visible");
+        background.classList.toggle("visible");
+        container.classList.toggle("visible");
+        postlist.classList.toggle("visible");
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+    const postlist = document.querySelector(".postlist");
+
+    if (postlist.classList.contains("visible")) {
+        postlist.classList.remove("visible");
+        setTimeout(() => postlist.classList.add("visible"), 10);
+    }
+});
+    </script>
+    
+  </body>
+</html>

@@ -1,6 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2"
-    </head>
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-44BZTQFWJV');
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whji's Field</title>
+    <link rel="stylesheet" href="fonts.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/hu2W0uPw5iV9RAH3USti6a9uHFo5euwU6jL3kD" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <a href="index.html">Whji's Field</a>
+      <input type="search" placeholder="Search...(not functional yet)">
+      <button id="menu">&#9776</button>
+    </header>
+
+
+    <!-- mainbox -->
+    <div class="box">   
+      <h1>Woohyeon's Field</h1>
+      <div class="background"></div>
+      
+
+      <div class="imagebox">
+        <img src="Graphix/whji_image.jpg" alt="Profile Photo">
+      </div>
+      <div class="introdox">
+        <p>KAIST 전산학부/수리과학과 복수전공 중<br/>통계를 좋아하는 대학생</p>
+      </div>
+      <div class="contact">
+        <a href="https://github.com/Whji">
+        <i class="fa-brands fa-github" target="_blank"></i>
+        </a>
+        <a href="https://www.instagram.com/whjjjji">
+        <i class="fa-brands fa-instagram" target="_blank"></i> 
+        </a>
+        <a href="mailto:jiwoohyun@kaist.ac.kr">
+        <i class="fa-regular fa-envelope" target="_blank"></i> 
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="spec">Specifications</div>
+      <div class="implex">개발 경험</div>
+      <div class="coursework">Courseworks</div>
+      <div class="personal-blog-setup">
+        Github Blog Setup
+        <ul>
+          <li>개인 블로그 디자인 및 개설</li>
+          <li>github page 이용</li> 
+          <li>html/css/javascript 기반 구현</li> 
+        </ul>
+        Custom Tutoring Aid
+        <ul>
+          <li>개별 오답노트 생성기 구현</li>
+          <li>android기반 application 제작</li>
+          <li>Node.js기반 백엔드 구현</li>
+        </ul>
+      </div>
+      <div class="awards-internship">Awards & Internships</div>
+      <div class="cs-course">CS Courses
+        <ul>
+          <li>CS206 Data Structure</li>
+          <li>CS230 System Programming</li>
+          <li>CS300 Introduction to Algorithm</li>
+          <li>CS320 Programming Language</li>
+        </ul>
+      </div>
+      <div class="math-course">Math Courses
+        <ul>
+          <li>MAS241&242 Analysis 1 & 2</li>
+          <li>MAS212 Linear Algebra</li>
+          <li>MAS275 Discrete Mathematics</li>
+          <li>MAS355 Mathematical Statistics</li>
+        </ul>
+      </div>
+      <div class="recent-post">
+        Recent Posts
+      </div>
+      <div class="card-container"></div>
+    </div>
+
+    <!-- sidebar -->
+    <nav id="sidebar">
+      <ul>
+        <li><a href="CSField/cs_index.html">CS Field</a>
+          <ul class="subfield">
+            <li><a href="CSField/PortfolioDiary/portfolio_diary_index.html">개발 일지</a></li>
+            <li><a href="CSField/PSStudy/ps_study_index.html">PS study</a></li>
+            <li><a href="CSField/Coursework/coursework_index.html">Coursework</a></li>
+          </ul>
+        </li>
+        <li><a href="MathField/math_index.html">Math Field</a>
+          <ul class="subfield">
+            <li><a href="MathField/Coursework/coursework_index.html">Coursework</a></li>
+            <li><a href="MathField/AboutStatistics/research_field_index.html">Statistics</a></li>
+          </ul>
+        </li>
+        <li><a href="MyDiary/my_diary_index.html">My Diary</a>
+          <ul class="subfield">
+            <li><a href="MyDiary/Diary/diary_index.html">일기/끄적끄적</a></li>
+            <li><a href="MyDiary/Hobby/hobby_index.html">취미생활</a></li>
+          </ul>
+        </li>
+        <div id="aboutme">
+          <a href="about_me.html">About Me</a>
+        </div>
+      </ul>
+    </nav>
+  
+    <footer>
+      <p>Copyright © 지우현 All rights reserved.<br/>
+        Built with <a href="https://getbootstrap.com/" target="_blank" style="color: inherit; text-decoration: underline;">Bootstrap</a> and custom illustrations.<br>
+        Design & Development by <strong>지우현</strong>.</p>
+    </footer>
+
+
+
+    <!-- javascript -->
+    <script type="module">
+          import { flinks } from "./AboutPosts/file_links.js";
+    import { md_renderer } from "./AboutPosts/md_renderer.js";
+
+    const cardContainer = document.querySelector(".card-container");
+    (async () => {
+    try {
+
+        const recentPosts = flinks.slice(0, 2);
+
+        const postData = await Promise.all(
+            recentPosts.map(async (post) => {
+                const postUrl = `AboutPosts/${post}`;
+                return await md_renderer(postUrl);
+            })
+        );
+
+        postData.forEach(({ metadata, htmlcontent }, index) => {
+            const card = document.createElement("div");
+            card.classList.add("card", "mb-3"); 
+            card.style.maxWidth = "540px"; 
+
+            card.innerHTML = `
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Post Image ${index + 1}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${metadata.title || "Untitled Post"}</h5>
+                            <p class="card-text">${metadata.description || htmlcontent.slice(0, 100)}...</p>
+                            <a href="./AboutPosts/post_detail.html?markdown=${recentPosts[index]}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            cardContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Error loading recent posts:", error);
+    }
+})();
+
+      let menu = document.querySelector("#menu");
+      let sidebar = document.querySelector("#sidebar");
+      let mainbox = document.querySelector(".box");
+      let contact = document.querySelector(".contact");
+      let background = document.querySelector(".background");
+      let container = document.querySelector(".container");
+      menu.addEventListener("click",()=>{
+        menu.classList.toggle("visible");
+        sidebar.classList.toggle("visible");
+        contact.classList.toggle("visible");
+        background.classList.toggle("visible");
+        container.classList.toggle("visible");
+      });
+    </script>
+  </body>
 </html>
