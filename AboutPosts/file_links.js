@@ -1,4 +1,4 @@
 export const flinks = [
-    'PS_start.md',
+    'ps_start.md',
     'blog_posting_template.md'
   ];
