@@ -60,7 +60,7 @@ Hashing (특히 문자열) (세모)
 
 + solved.ac class 1 문항들  
 
-추가적으로, [solved.ac](https://solved.ac)라는 사이트도 있다. 여기도 등록해둘 예정이다.
+추가적으로, [solved.ac](https://solved.ac)라는 사이트도 있다. 여기도 등록해둘 예정이다.  
 가이드라인 사이트이다. [solved.ac guideline](https://blog.koder.page/solvedac-guideline/)  
 울학교가 1등이냐..? 대단한걸..
 
