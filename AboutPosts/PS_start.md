@@ -38,7 +38,7 @@ PS 시작하려고 한다.
 * 완전탐색 - 1476, 1107, 1451, 9095, 10819, 10971, 1697, 1963, 9019, 1525, 2251, 2186, 3108, 5014, 1759, 2580, 1987, 6603, 1182, 2003, 1806, 1644, 1261, 1208, 7453, 2632, 2143
 
 
-* 별 찍기 문제집: [별 찍기] (https://www.acmicpc.net/workbook/view/20,"go baekjoon problemset")
+* 별 찍기 문제집: [별 찍기] (https://www.acmicpc.net/workbook/view/20)
 
 ++ 추가) 기본적으로 알고 있어야 하는 것들
 Data Structure 관련
@@ -62,8 +62,8 @@ Hashing (특히 문자열) (세모)
 
 
 
-추가적으로, [solved.ac](https://solved.ac,"go solvedac")라는 사이트도 있다. 여기도 등록해둘 예정이다.
-가이드라인 사이트이다. [solved.ac guideline](https://blog.koder.page/solvedac-guideline/,"go solvedac")
+추가적으로, [solved.ac](https://solved.ac)라는 사이트도 있다. 여기도 등록해둘 예정이다.
+가이드라인 사이트이다. [solved.ac guideline](https://blog.koder.page/solvedac-guideline/)
 울학교가 1등이냐..? 대단한걸..
 
 그리고 추가적인 문제 추천 사이트들을 모은다.
