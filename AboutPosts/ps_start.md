@@ -40,44 +40,38 @@ PS 시작하려고 한다.
 
 * 별 찍기 문제집: [별 찍기] (https://www.acmicpc.net/workbook/view/20)
 
-++ 추가) 기본적으로 알고 있어야 하는 것들
-Data Structure 관련
-array, stack, queue, deck(?) Priority queue, BBST(C++ set, map) (?) 등등 (내장 자료구조)
-graph, tree
-Segment tree (?)
-Union-Find (Disjoint Set)
+++ 추가) 기본적으로 알고 있어야 하는 것들  
+Data Structure 관련  
+array, stack, queue, deck(?) Priority queue, BBST(C++ set, map) (?) 등등 (내장 자료구조)  
+graph, tree  
+Segment tree (?)  
+Union-Find (Disjoint Set)  
 
-Algorithm 관련
-DFS BFS + 위상정렬, Dijkstra(?) 등등 파생 알고리즘
-Binary Search, two pointer(?), swipping(?)
-Dynamic Programming (?)
-Hashing (특히 문자열) (세모)
+Algorithm 관련  
+DFS BFS + 위상정렬, Dijkstra(?) 등등 파생 알고리즘  
+Binary Search, two pointer(?), swipping(?)  
+Dynamic Programming (?)  
+Hashing (특히 문자열) (세모)  
 
 그 외
 기초 정수론
 ### Solved
 입출력 - 2557, 1000, 2558, 10950, 10951, 10952, 10953, 11021, 11022, 11718, 
 
-+ solved.ac class 1 문항들
-
-
++ solved.ac class 1 문항들  
 
 추가적으로, [solved.ac](https://solved.ac)라는 사이트도 있다. 여기도 등록해둘 예정이다.
-가이드라인 사이트이다. [solved.ac guideline](https://blog.koder.page/solvedac-guideline/)
+가이드라인 사이트이다. [solved.ac guideline](https://blog.koder.page/solvedac-guideline/)  
 울학교가 1등이냐..? 대단한걸..
 
 그리고 추가적인 문제 추천 사이트들을 모은다.
 ### 문제 추천 블로그들
 https://codingdodo.tistory.com/94
 
-https://anz1217.tistory.com/147 -> 얘는 문제추천은 아니지만 좀 더 실력이 쌓이면 볼 만한 글
-
-https://www.acmicpc.net/step -> 괜찮은 백준 문제집
-
-https://github.com/TG-WinG/Algorithm?tab=readme-ov-file -> 좋은 글, 알고리즘 공부 방법
-
-https://subinium.github.io/PS-Study-Types-and-Complements/
-
+https://anz1217.tistory.com/147 -> 얘는 문제추천은 아니지만 좀 더 실력이 쌓이면 볼 만한 글  
+https://www.acmicpc.net/step -> 괜찮은 백준 문제집  
+https://github.com/TG-WinG/Algorithm?tab=readme-ov-file -> 좋은 글, 알고리즘 공부 방법  
+https://subinium.github.io/PS-Study-Types-and-Complements/  
 ***
 
 ### References
