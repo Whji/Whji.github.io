@@ -140,7 +140,7 @@
 
         const postData = await Promise.all(
             recentPosts.map(async (post) => {
-                const postUrl = `AboutPosts/${post}`;
+                const postUrl = `${post}`;
                 return await md_renderer(postUrl);
             })
         );

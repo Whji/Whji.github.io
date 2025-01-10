@@ -109,7 +109,7 @@
       (async () => {
         try {
           const renderedPosts = await Promise.all(recent_two.map(async (content) => {
-              const adjcontent = `../AboutPosts/${content}`;
+              const adjcontent = `${content}`;
               const htmlcont = await md_renderer(adjcontent);
               console.log(adjcontent);
               if (htmlcont.metadata.category.split('>')[0].trim() == 'CS Field'){
