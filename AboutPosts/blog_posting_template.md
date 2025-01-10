@@ -1,7 +1,7 @@
 ---
 title: "백준 #2557: Hello, World! 출력하기"
 date: "2025-01-04"
-category: "CS Field > PS Study > 백준 문제풀이"
+category: "CS Field > 개발 일지 > 백준 문제풀이"
 ---
 
 ### 문제 설명

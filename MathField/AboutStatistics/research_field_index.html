@@ -91,7 +91,7 @@
       (async () => {
         try {
         const fcontexts = await Promise.all(flinks.map(async (element) => {
-          const adjelement = `../../AboutPosts/${element}`;
+          const adjelement = `${element}`;
           console.log(`adjelement: ${adjelement}`);
           return md_renderer(adjelement);
         })
