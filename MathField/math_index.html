@@ -33,8 +33,7 @@
 
     <div class="container">
       <div class="Recent_posts">Recent Posts
-        <div class="postlist">
-        </div>
+        <div class="postlist"></div>
       </div>
       <hr/>
       <div class="Current_working">Current working
@@ -112,13 +111,11 @@
                 <p>${htmlcont.htmlcontent.slice(0, 100)}...</p>
               `;
               item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${content}`);
-              
 
               item.addEventListener("click",()=>{
           const link = item.getAttribute("data-link");
             window.location.href = link;
           });
-
               return item;
               }
 

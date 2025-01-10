@@ -118,9 +118,8 @@ body,html {
     display: flex;
     flex-direction: row;
     gap:10px;
-    height: 10%;
-    width: 10%;
     transition: transform 0.4s ease-in-out;
+
   }
   .contact.visible {
     transform: translateX(-250px);
@@ -129,7 +128,10 @@ body,html {
     text-decoration: none;
     color: black;
     font-size: 24px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.2s;
+    z-index: 100;
   }
   .contact a:hover {
     transform:scale(1.2);
