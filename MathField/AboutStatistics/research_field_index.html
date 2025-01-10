@@ -100,7 +100,7 @@
         fcontexts.forEach((context,index) => {
           console.log("fcontexts: ", fcontexts);
           const checker = context.metadata.category.split('>')[1].trim();
-          if (['통계학','통계학 관련','Statistics','statistics','About Statistics','Research','연구 관련','About Research'].includes(checker)){
+          if (context.metadata.category.split('>')[0].trim() == 'Math Field' && ['통계학','통계학 관련','Statistics','statistics','About Statistics','Research','연구 관련','About Research'].includes(checker)){
             const item = document.createElement("div");
         item.innerHTML = 
             `<h2>${context.metadata.title}</h2>

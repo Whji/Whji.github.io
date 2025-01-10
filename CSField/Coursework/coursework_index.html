@@ -100,7 +100,7 @@
         fcontexts.forEach((context,index) => {
           console.log("fcontexts: ", fcontexts);
           const checker = context.metadata.category.split('>')[1].trim();
-          if(['Coursework','coursework'].includes(checker)) {
+          if(context.metadata.category.split('>')[0].trim() == 'CS Field' &&['Coursework','coursework'].includes(checker)) {
             const item = document.createElement("div");
         item.innerHTML = 
             `<h2>${context.metadata.title}</h2>

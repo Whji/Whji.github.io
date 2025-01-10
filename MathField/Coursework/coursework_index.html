@@ -99,8 +99,7 @@
 
         fcontexts.forEach((context,index) => {
           console.log("fcontexts: ", fcontexts);
-          const checker = context.metadata.category.split('>')[1].trim();
-          if(checker == 'Coursework'){
+          if(context.metadata.category.split('>')[0].trim() == 'Math Field' && context.metadata.category.split('>')[1].trim() == 'Coursework'){
             const item = document.createElement("div");
         item.innerHTML = 
             `<h2>${context.metadata.title}</h2>
