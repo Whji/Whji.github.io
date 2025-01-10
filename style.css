@@ -119,7 +119,6 @@ body,html {
     flex-direction: row;
     gap:10px;
     transition: transform 0.4s ease-in-out;
-    z-index: 3;
 
   }
   .contact.visible {
@@ -129,8 +128,6 @@ body,html {
     text-decoration: none;
     color: black;
     font-size: 24px;
-    width: 20px;
-    height: 20px;
     transition: transform 0.2s;
  
   }
