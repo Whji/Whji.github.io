@@ -106,8 +106,8 @@
           };
         })
       );
-        const rec_twoposts = postconts.filter((cont) => cont.metadata.category.split('>').trim[0] === 'Math Field').slice(0,2);
-        const resposts = rec_twoposts.forEach((post) => {
+        const rec_twoposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'Math Field').slice(0,2);
+        rec_twoposts.forEach((post) => {
           const item = document.createElement("div");
           item.innerHTML = `
           <h3>${post.metadata.title}</h3>
@@ -115,16 +115,16 @@
           <p>${post.metadata.category}</p>
           <p>${post.htmlcontent.slice(0, 100)}...</p>
           `;
-          item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${post}`);
+          item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${post.metadata.title}`);
           item.addEventListener("click",() => {
             const link = item.getAttribute("data-link");
             window.location.href = link;
           });
-          postlist.appendChild("item");
+          postlist.appendChild(item);
         })
 
       } catch (error) {
-        console.error("error: "error);
+        console.error("error: " + error);
       }
       })();
 
