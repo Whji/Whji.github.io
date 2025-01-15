@@ -97,35 +97,35 @@
     
       (async () => {
         try {
-          const renderedMathPosts = await Promise.all(flinks.map(async (content) => {
-              const htmlcont = await md_renderer(content);
-              console.log(content);
-              if (htmlcont.metadata.category.split('>')[0].trim() == 'Math Field'){
-                const item = document.createElement("div");
-              item.innerHTML = `
-                <h3>${htmlcont.metadata.title}</h3>
-                <p>${htmlcont.metadata.date}</p>
-                <p>${htmlcont.metadata.category}</p>
-                <p>${htmlcont.htmlcontent.slice(0, 100)}...</p>
-              `;
-              item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${content}`);
-
-              item.addEventListener("click",()=>{
-          const link = item.getAttribute("data-link");
+        const postconts = await Promise.all(flinks.map(async (post) => {
+          const htmlcont = await md_renderer(post);
+          return {
+            metadata: htmlcont.metadata,
+            content: htmlcont.htmlcontent,
+            content,
+          };
+        })
+      );
+        const rec_twoposts = postconts.filter((cont) => cont.metadata.category.split('>').trim[0] === 'Math Field').slice(0,2);
+        const resposts = rec_twoposts.forEach((post) => {
+          const item = document.createElement("div");
+          item.innerHTML = `
+          <h3>${post.metadata.title}</h3>
+          <p>${post.metadata.date}</p>
+          <p>${post.metadata.category}</p>
+          <p>${post.htmlcontent.slice(0, 100)}...</p>
+          `;
+          item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${post}`);
+          item.addEventListener("click",() => {
+            const link = item.getAttribute("data-link");
             window.location.href = link;
           });
-              return item;
-              }
+          postlist.appendChild("item");
+        })
 
-            })
-          );
-        
-          const resPosts = renderedMathPosts.slice(0,2);
-    
-          resPosts.forEach((item) => postlist.appendChild(item));
-        } catch (error) {
-          console.error("Error rendering markdown:", error);
-        }
+      } catch (error) {
+        throw new Error("error: "error);
+      }
       })();
 
 
