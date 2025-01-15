@@ -92,16 +92,14 @@
     <script type="module">
       import { flinks } from '../AboutPosts/file_links.js';
       import { md_renderer } from '../AboutPosts/md_renderer.js';
-    
-      const recent_two = flinks.slice(0, 2);
+
       const postlist = document.querySelector(".postlist");
     
       (async () => {
         try {
-          const renderedPosts = await Promise.all(recent_two.map(async (content) => {
-              const adjcontent = `${content}`;
-              const htmlcont = await md_renderer(adjcontent);
-              console.log(adjcontent);
+          const renderedMathPosts = await Promise.all(flinks.map(async (content) => {
+              const htmlcont = await md_renderer(content);
+              console.log(content);
               if (htmlcont.metadata.category.split('>')[0].trim() == 'Math Field'){
                 const item = document.createElement("div");
               item.innerHTML = `
@@ -121,9 +119,10 @@
 
             })
           );
-
+        
+          const resPosts = renderedMathPosts.slice(0,2);
     
-          renderedPosts.forEach((item) => postlist.appendChild(item));
+          resPosts.forEach((item) => postlist.appendChild(item));
         } catch (error) {
           console.error("Error rendering markdown:", error);
         }

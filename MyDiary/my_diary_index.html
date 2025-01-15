@@ -89,15 +89,13 @@
       import { flinks } from '../AboutPosts/file_links.js';
       import { md_renderer } from '../AboutPosts/md_renderer.js';
     
-      const recent_two = flinks.slice(0, 2);
       const postlist = document.querySelector(".postlist");
     
       (async () => {
         try {
-          const renderedPosts = await Promise.all(recent_two.map(async (content) => {
-              const adjcontent = `${content}`;
-              const htmlcont = await md_renderer(adjcontent);
-              console.log(adjcontent);
+          const renderedDiaryPosts = await Promise.all(flinks.map(async (content) => {
+              const htmlcont = await md_renderer(content);
+              console.log(content);
               if (htmlcont.metadata.category.split('>')[0].trim() == 'My Diary'){
                 const item = document.createElement("div");
               item.innerHTML = `
@@ -107,13 +105,11 @@
                 <p>${htmlcont.htmlcontent.slice(0, 100)}...</p>
               `;
               item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${content}`);
-              
 
               item.addEventListener("click",()=>{
           const link = item.getAttribute("data-link");
             window.location.href = link;
           });
-
               return item;
               }
 
@@ -121,7 +117,8 @@
           );
 
     
-          renderedPosts.forEach((item) => postlist.appendChild(item));
+          const resPosts = renderedDiaryPosts.slice(0,2);
+          resPosts.forEach((item) => postlist.appendChild(item));
         } catch (error) {
           console.error("Error rendering markdown:", error);
         }

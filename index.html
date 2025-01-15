@@ -137,16 +137,15 @@
     (async () => {
     try {
 
-        const recentPosts = flinks.slice(0, 2);
 
         const postData = await Promise.all(
-            recentPosts.map(async (post) => {
-                const postUrl = `${post}`;
-                return await md_renderer(postUrl);
+            flinks.map(async (post) => {
+                return await md_renderer(post);
             })
         );
+        const recent_twoposts = postData.slice(0,2);
 
-        postData.forEach(({ metadata, htmlcontent }, index) => {
+        recent_twoposts.forEach(({ metadata, htmlcontent }, index) => {
             const card = document.createElement("div");
             card.classList.add("card", "mb-3"); 
             card.style.maxWidth = "540px"; 
