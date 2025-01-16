@@ -105,45 +105,68 @@
     
       const postlist = document.querySelector(".postlist");
     
-      (async () => {
-        try {
-        const postconts = await Promise.all(flinks.map(async (post) => {
-          const htmlcont = await md_renderer(post);
-          return {
-            metadata: htmlcont.metadata,
-            content: htmlcont.htmlcontent
-          };
-        })
-      );
-        const recposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'CS Field');
-        const rec_twoposts = recposts.slice(0,2);
-        rec_twoposts.forEach((post) => {
+      // Helper function to fetch and parse posts
+      const fetchPosts = async () => {
+        return Promise.all(
+          flinks.map(async (post) => {
+            const htmlcont = await md_renderer(post);
+            return {
+              metadata: htmlcont.metadata,
+              content: htmlcont.htmlcontent,
+            };
+          })
+        );
+      };
+    
+      // Helper function to filter CS Field posts
+      const getCSPosts = (posts, limit = 2) => {
+        return posts
+          .filter(
+            (post) =>
+              post.metadata.category.split('>')[0].trim() === 'CS Field'
+          )
+          .slice(0, limit);
+      };
+    
+      // Render posts to the DOM
+      const renderPosts = (posts) => {
+        posts.forEach((post) => {
           const item = document.createElement("div");
           item.innerHTML = `
-          <h3>${post.metadata.title}</h3>
-          <p>${post.metadata.date}</p>
-          <p>${post.metadata.category}</p>
-          <p>${post.htmlcontent.slice(0, 100)}...</p>
+            <h3>${post.metadata.title}</h3>
+            <p>${post.metadata.date}</p>
+            <p>${post.metadata.category}</p>
+            <p>${post.content.slice(0, 100)}...</p>
           `;
-          item.setAttribute("data-link",`../AboutPosts/post_detail.html?markdown=${post.metadata.title}`);
-          item.addEventListener("click",() => {
+          item.setAttribute(
+            "data-link",
+            `../AboutPosts/post_detail.html?markdown=${encodeURIComponent(
+              post.metadata.title
+            )}`
+          );
+          item.addEventListener("click", () => {
             const link = item.getAttribute("data-link");
             window.location.href = link;
           });
           postlist.appendChild(item);
-        })
-
-      } catch (error) {
-        console.error("error: " + error);
-      }
-      })();
-
-
+        });
+      };
     
-      let menu = document.querySelector("#menu");
-      let sidebar = document.querySelector("#sidebar");
-      let background = document.querySelector(".background");
-      let container = document.querySelector(".container");
+      (async () => {
+        try {
+          const posts = await fetchPosts();
+          const csPosts = getCSPosts(posts);
+          renderPosts(csPosts);
+        } catch (error) {
+          console.error("Error loading posts:", error);
+        }
+      })();
+    
+      // Sidebar toggle functionality
+      const menu = document.querySelector("#menu");
+      const sidebar = document.querySelector("#sidebar");
+      const background = document.querySelector(".background");
+      const container = document.querySelector(".container");
     
       menu.addEventListener("click", () => {
         sidebar.classList.toggle("visible");
@@ -151,15 +174,15 @@
         container.classList.toggle("visible");
         postlist.classList.toggle("visible");
       });
+    
       document.addEventListener("DOMContentLoaded", () => {
-    const postlist = document.querySelector(".postlist");
-
-    if (postlist.classList.contains("visible")) {
-        postlist.classList.remove("visible");
-        setTimeout(() => postlist.classList.add("visible"), 10);
-    }
-});
+        if (postlist.classList.contains("visible")) {
+          postlist.classList.remove("visible");
+          setTimeout(() => postlist.classList.add("visible"), 10);
+        }
+      });
     </script>
+    
     
   </body>
 </html>
