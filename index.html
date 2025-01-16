@@ -140,6 +140,7 @@
 
         const postData = await Promise.all(
             flinks.map(async (post) => {
+                console.log(`the post name is: ${post}`);
                 return await md_renderer(post);
             })
         );
