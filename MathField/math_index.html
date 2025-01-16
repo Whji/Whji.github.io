@@ -101,8 +101,7 @@
           const htmlcont = await md_renderer(post);
           return {
             metadata: htmlcont.metadata,
-            content: htmlcont.htmlcontent,
-            content,
+            content: htmlcont.htmlcontent
           };
         })
       );
