@@ -96,6 +96,7 @@ body,html {
     border-radius:50%;
     border: 5px solid rgb(134, 132, 137);
     overflow: hidden;
+    cursor: pointer;
   }
   .imagebox img {
     width: 100%;

@@ -179,6 +179,12 @@
       let contact = document.querySelector(".contact");
       let background = document.querySelector(".background");
       let container = document.querySelector(".container");
+      const imgbox = document.querySelector(".imagebox");
+      imgbox.setAttribute("data-link","./about_me.html");
+      imgbox.addEventListener("click",() => {
+        const link = imgbox.getAttribute("data-link");
+        window.location.href = link;
+      });
       menu.addEventListener("click",()=>{
         menu.classList.toggle("visible");
         sidebar.classList.toggle("visible");
