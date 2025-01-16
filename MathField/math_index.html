@@ -105,7 +105,8 @@
           };
         })
       );
-        const rec_twoposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'Math Field').slice(0,2);
+        const recposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'Math Field');
+        const rec_twoposts = recposts.slice(0,2);
         rec_twoposts.forEach((post) => {
           const item = document.createElement("div");
           item.innerHTML = `

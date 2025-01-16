@@ -101,7 +101,8 @@
           };
         })
       );
-        const rec_twoposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'My Diary').slice(0,2);
+        const recposts = postconts.filter((cont) => cont.metadata.category.split('>')[0].trim() === 'My Diary');
+        const rec_twoposts = recposts.slice(0,2);
         rec_twoposts.forEach((post) => {
           const item = document.createElement("div");
           item.innerHTML = `
