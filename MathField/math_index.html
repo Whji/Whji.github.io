@@ -10,7 +10,7 @@
   gtag('config', 'G-44BZTQFWJV');
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Whji's Field>CS Field</title>
+    <title>Whji's Field>Math Field</title>
     <link rel="stylesheet" href="../fonts.css"/>
     <link rel="stylesheet" href="math_index_style.css"/>
   </head>
@@ -38,6 +38,8 @@
         <div id="cur_impl_list">
             Current Research
           <ul>
+            <li>Stanford Univ. CS229 Machine Learning</li>
+            <li>Stanford Univ. STAT231 Statistical Learning Theory</li>
           </ul>
         </div>
         <div id="cur_course_list">
@@ -95,7 +97,6 @@
     
       const postlist = document.querySelector(".postlist");
     
-      // Helper function to fetch and parse posts
       const fetchPosts = async () => {
         return Promise.all(
           flinks.map(async (post) => {
@@ -108,7 +109,6 @@
         );
       };
     
-      // Helper function to filter CS Field posts
       const getMathPosts = (posts, limit = 2) => {
         return posts
           .filter(
@@ -118,7 +118,6 @@
           .slice(0, limit);
       };
     
-      // Render posts to the DOM
       const renderPosts = (posts) => {
         posts.forEach((post) => {
           const item = document.createElement("div");
@@ -152,7 +151,6 @@
         }
       })();
     
-      // Sidebar toggle functionality
       const menu = document.querySelector("#menu");
       const sidebar = document.querySelector("#sidebar");
       const background = document.querySelector(".background");

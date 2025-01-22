@@ -89,7 +89,6 @@
     
       const postlist = document.querySelector(".postlist");
     
-      // Helper function to fetch and parse posts
       const fetchPosts = async () => {
         return Promise.all(
           flinks.map(async (post) => {
@@ -111,7 +110,6 @@
           .slice(0, limit);
       };
     
-      // Render posts to the DOM
       const renderPosts = (posts) => {
         posts.forEach((post) => {
           const item = document.createElement("div");
@@ -145,7 +143,6 @@
         }
       })();
     
-      // Sidebar toggle functionality
       const menu = document.querySelector("#menu");
       const sidebar = document.querySelector("#sidebar");
       const background = document.querySelector(".background");
