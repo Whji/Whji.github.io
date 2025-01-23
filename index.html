@@ -135,49 +135,47 @@
 
     const cardContainer = document.querySelector(".card-container");
     (async () => {
-    try {
+  try {
+    const postData = await Promise.all(
+      flinks.map(async (post) => {
+        console.log(`the post name is: ${post}`);
+        return await md_renderer(post);
+      })
+    );
+    const recent_twoposts = postData.slice(0, 2);
 
+    recent_twoposts.forEach(({ metadata, htmlcontent }, index) => {
+      const card = document.createElement("div");
+      card.classList.add("card", "mb-3");
+      card.style.maxWidth = "540px";
+      card.style.cursor = "pointer";
 
-        const postData = await Promise.all(
-            flinks.map(async (post) => {
-                console.log(`the post name is: ${post}`);
-                return await md_renderer(post);
-            })
-        );
-        const recent_twoposts = postData.slice(0,2);
+      const postLink = `./AboutPosts/post_detail.html?markdown=${flinks[index]}`;
+      card.addEventListener("click", () => {
+        window.location.href = postLink;
+      });
 
-        recent_twoposts.forEach(({ metadata, htmlcontent }, index) => {
-            const card = document.createElement("div");
-            card.classList.add("card", "mb-3"); 
-            card.style.maxWidth = "540px"; 
-            card.style.cursor = "pointer";
+      card.innerHTML = `
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Post Image ${index + 1}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${metadata.title || "Untitled Post"}</h5>
+              <p class="card-text">${metadata.description || htmlcontent.slice(0, 100)}...</p>
+            </div>
+          </div>
+        </div>
+      `;
 
-            const postLink = `./AboutPosts/post_detail.html?markdown=${flinks[index]}`;
-            card.addEventListener("click", () => {
-          window.location.href = postLink;
-          });
-        });
-
-            card.innerHTML = `
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Post Image ${index + 1}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">${metadata.title || "Untitled Post"}</h5>
-                            <p class="card-text">${metadata.description || htmlcontent.slice(0, 100)}...</p>
-                            <a href="./AboutPosts/post_detail.html?markdown=${recent_twoposts[index]}" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            cardContainer.appendChild(card);
-    } catch (error) {
-        console.error("Error loading recent posts:", error);
-    }
+      cardContainer.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error loading recent posts:", error);
+  }
 })();
+
 
       let menu = document.querySelector("#menu");
       let sidebar = document.querySelector("#sidebar");
