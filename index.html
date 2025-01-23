@@ -155,8 +155,8 @@
             const postLink = `./AboutPosts/post_detail.html?markdown=${flinks[index]}`;
             card.addEventListener("click", () => {
           window.location.href = postLink;
+          });
         });
-});
 
             card.innerHTML = `
                 <div class="row g-0">
@@ -174,7 +174,6 @@
             `;
 
             cardContainer.appendChild(card);
-        });
     } catch (error) {
         console.error("Error loading recent posts:", error);
     }
