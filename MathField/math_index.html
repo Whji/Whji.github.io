@@ -119,7 +119,7 @@
       };
     
       const renderPosts = (posts) => {
-        posts.forEach((post) => {
+        posts.forEach((post,index) => {
           const item = document.createElement("div");
           item.innerHTML = `
             <h3>${post.metadata.title}</h3>
@@ -128,13 +128,9 @@
             <p>${post.content.slice(0, 100)}...</p>
           `;
           item.setAttribute(
-            "data-link",
-            `../AboutPosts/post_detail.html?markdown=${encodeURIComponent(
-              post.metadata.title
-            )}`
-          );
+            "data-link", flinks[index]);
           item.addEventListener("click", () => {
-            const link = item.getAttribute("data-link");
+            const link = `../AboutPosts/post_detail.html?markdown=${item.getAttribute("data-link")}`;
             window.location.href = link;
           });
           postlist.appendChild(item);
