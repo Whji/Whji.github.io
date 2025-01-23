@@ -5,7 +5,7 @@ category: "CS Field > PS Study > 백준 문제풀이"
 ---
 
 Solved.ac 풀기 시작했다고 이야기했던가?  
-<img src="./FileImages/ps_start_solvedac.png",width=50em, height=auto/>  
+<img src="./FileImages/ps_start_solvedac.png",width="50em"/>  
 
 며칠 전부터 Class 2 문제 풀기 시작했다.  
 하루에 한 문제는 적어도 꼭 풀어야지!  
