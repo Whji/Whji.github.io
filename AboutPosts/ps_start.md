@@ -1,7 +1,7 @@
 ---
 title: "PS 본격적 시작!"
 date: "2025-01-22"
-category: "CS Field > Coursework > 백준 문제풀이"
+category: "CS Field > PS Study > 백준 문제풀이"
 ---
 
 Solved.ac 풀기 시작했다고 이야기했던가?  
