@@ -135,7 +135,9 @@
           `;
           item.setAttribute(
             "data-link",
-            `../AboutPosts/post_detail.html?markdown=${flinks[index]}`
+            `../AboutPosts/post_detail.html?markdown=${encodeURIComponent(
+              post.metadata.title
+            )}`
           );
           item.addEventListener("click", () => {
             const link = item.getAttribute("data-link");
