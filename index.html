@@ -150,6 +150,13 @@
             const card = document.createElement("div");
             card.classList.add("card", "mb-3"); 
             card.style.maxWidth = "540px"; 
+            card.style.cursor = "pointer";
+
+            const postLink = `./AboutPosts/post_detail.html?markdown=${flinks[index]}`;
+            card.addEventListener("click", () => {
+          window.location.href = postLink;
+        });
+});
 
             card.innerHTML = `
                 <div class="row g-0">
