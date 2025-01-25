@@ -113,11 +113,12 @@
             return {
               metadata: htmlcont.metadata,
               content: htmlcont.htmlcontent,
+              file: post,
             };
           })
         );
       };
-      console.log(fetchPosts);
+
     
       const getCSPosts = (posts, limit = 2) => {
         return posts
@@ -127,7 +128,8 @@
           )
           .slice(0, limit);
       };
-    
+      console.log(getCSPosts);
+
       const renderPosts = (posts) => {
         posts.forEach((post,index) => {
           const item = document.createElement("div");
@@ -138,7 +140,7 @@
             <p>${post.content.slice(0, 100)}...</p>
           `;
           item.setAttribute(
-            "data-link",flinks[index]);
+            "data-link",post.file);
           item.addEventListener("click", () => {
             const link = `../AboutPosts/post_detail.html?markdown=${item.getAttribute("data-link")}
             `;

@@ -107,6 +107,7 @@
             return {
               metadata: htmlcont.metadata,
               content: htmlcont.htmlcontent,
+              file: post,
             };
           })
         );
@@ -131,7 +132,7 @@
             <p>${post.content.slice(0, 100)}...</p>
           `;
           item.setAttribute(
-            "data-link", flinks[index]);
+            "data-link", post.file);
           item.addEventListener("click", () => {
             const link = `../AboutPosts/post_detail.html?markdown=${item.getAttribute("data-link")}`;
             window.location.href = link;
