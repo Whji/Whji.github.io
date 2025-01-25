@@ -1,4 +1,6 @@
 export const flinks = [
+    'r_stats_and_graphics.md',
+    'r_basic.md',
     'ps_boj_1259.md',
     'ps_boj_2798.md',
     'hobby_start.md',
