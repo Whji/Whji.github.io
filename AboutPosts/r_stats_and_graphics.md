@@ -1,5 +1,5 @@
 ---
-title: "R 통계 관련 패키지 & 시각화 패키지 정리"
+title: "R 통계 관련 패키지 &amp; 시각화 패키지 정리"
 date: "2025-01-25"
 category: "Math Field > Statistics > R"
 ---
