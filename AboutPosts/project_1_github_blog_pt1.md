@@ -20,7 +20,7 @@ category: "CS Field > Portfolio Diary > Project #1"
 
 지금 화면에서 F12 눌러보면 화면 오른쪽에 어떤 코드가 뜰 건데, 위로 올려보면 <!doctype html> 로 시작하는 코드가 뜰 거다. 이 언어의 이름이 html이고, 이 언어를 기반으로 작성된 파일이 웹 페이지라고 생각하면 된다. 크롬, 사파리 같은 Web Browser들은 이 html 파일을 읽어주는 도구인 셈이다.  
 
-<img src="./FileImages/project_1_github_blog_pt1_github_repo.png" alt="github_repo" width="500">  
+<img src="./FileImages/project_1_github_blog_pt1_github_repo.png" alt="github_repo" style="width: 80%; height: auto; display: block; margin: 0 auto;">  
 깃허브 리포지토리 생성해서, 거기다가 index.html이라는 파일을 올려두었다.   
 
 리포지토리 이름을 저렇게 생성해두면 https://username.github.io 라고 검색창에 쳤을 때 웹 페이지를 연동하도록 github에서 처리해준다. 그 웹 페이지에서 첫 화면에 뜨는 게 index.html 파일의 컨텐츠이다.  
@@ -84,5 +84,5 @@ javascript는 이렇게 만든 웹사이트에, 사용자와 인터렉티브한 
 
 GPT에게 부탁을 했더니  
 
-<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design.png" alt="chatgpt_design" width="500">
-<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design_2.png" alt="chatgpt_design2" width="500">
+<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design.png" alt="chatgpt_design" style="width: 80%; height: auto; display: block; margin: 0 auto;>
+<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design_2.png" alt="chatgpt_design2" style="width: 80%; height: auto; display: block; margin: 0 auto;>
