@@ -84,5 +84,5 @@ javascript는 이렇게 만든 웹사이트에, 사용자와 인터렉티브한 
 
 GPT에게 부탁을 했더니  
 
-<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design.png" alt="chatgpt_design" style="width: 80%; height: auto; display: block; margin: 0 auto;>
-<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design_2.png" alt="chatgpt_design2" style="width: 80%; height: auto; display: block; margin: 0 auto;>
+<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design.png" alt="chatgpt_design" style="width: 80%; height: auto; display: block; margin: 0 auto;">  
+<img src="./FileImages/project_1_github_blog_pt1_chatgpt_design_2.png" alt="chatgpt_design2" style="width: 80%; height: auto; display: block; margin: 0 auto;">
