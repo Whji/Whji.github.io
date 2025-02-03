@@ -1,4 +1,9 @@
 export const flinks = [
+    'ps_boj_11399.md',
+    'ps_boj_1003.md',
+    'ps_boj_10816.md',
+    'about_namespace.md',
+    'ps_boj_10814.md',
     'r_stats_and_graphics.md',
     'r_basic.md',
     'ps_boj_1259.md',
