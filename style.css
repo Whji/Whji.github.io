@@ -1,65 +1,410 @@
 @charset "utf-8";
 
-body,html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, Helvetica, Sans-serif, 'Noto Serif KR', 'Montserrat','Roboto';
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, Sans-serif, "Noto Serif KR", "Montserrat",
+    "Roboto";
+}
+header {
+  position: fixed;
+  top: 0;
+  height: 7%;
+  width: 100%;
+  border: none;
+  background-color: rgb(170, 190, 160);
+  z-index: 1000;
+  display: flex;
+}
+header a {
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 11px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  font-family: "Roboto";
+}
+header input {
+  position: absolute;
+  top: 9px;
+  right: 70px;
+  height: 60%;
+  width: 15%;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+}
+#menu {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  height: 30px;
+  width: 35px;
+  transition: transform 0.4s ease-in-out;
+}
+#menu.visible {
+  transform: translateX(0);
+}
+#menu:hover {
+  cursor: pointer;
+}
+.box {
+  position: relative;
+  margin-top: 70px;
+  margin-left: 20px;
+  height: 40%;
+  width: 95%;
+  border: none;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("Graphix/dall-e_image.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+.background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  background-color: white;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+}
+.background.visible {
+  width: 250px;
+}
+h1 {
+  position: absolute;
+  left: 30px;
+  font-family: "Montserrat";
+  font-size: 45px;
+  font-weight: bold;
+}
+.imagebox {
+  position: absolute;
+  height: 175px;
+  width: 150px;
+  margin-left: 50px;
+  margin-top: 125px;
+  border-radius: 50%;
+  border: 5px solid rgb(134, 132, 137);
+  overflow: hidden;
+  cursor: pointer;
+}
+.imagebox img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.introdox {
+  position: absolute;
+  height: 25%;
+  width: 55%;
+  margin-left: 250px;
+  margin-top: 210px;
+  font-family: "Noto Serif KR", serif;
+  font-weight: normal;
+}
+.contact {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+.contact.visible {
+  transform: translateX(-250px);
+}
+.contact a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  transition: transform 0.2s;
+}
+.contact a:hover {
+  transform: scale(1.2);
+  color: #555;
+}
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0fr;
+  margin-top: 30px;
+  gap: 20px;
+  padding: 20px;
+  transition: grid-template-columns 0.4s ease-in-out;
+}
+.container.visible {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.spec {
+  grid-column: 1 / 5;
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+  color: rgb(50, 50, 50);
+  margin-bottom: 10px;
+}
+
+.implex {
+  grid-column: 1 / 3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+}
+
+.coursework {
+  grid-column: 3 / 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+}
+
+.awards-internship,
+.personal-blog-setup {
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(80, 80, 80);
+  margin-top: 10px;
+}
+.personal-blog-setup {
+  grid-column: 1/2;
+}
+.awards-internship {
+  grid-column: 2/3;
+}
+
+.cs-course,
+.math-course {
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(80, 80, 80);
+  margin-top: 10px;
+}
+
+.cs-course {
+  grid-column: 3/4;
+}
+
+.math-course {
+  grid-column: 4/5;
+}
+
+.recent-post {
+  grid-column: 1 / 5;
+  grid-row: 5 / 6;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+  color: rgb(50, 50, 50);
+  margin-top: 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+
+.card-container {
+  grid-column: 1 / 5;
+  grid-row: 6 / 7;
+  font-family: "Spoqa Han Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 18rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  font-family: "Spoqa Han Sans", sans-serif;
+  right: -250px;
+  height: 100%;
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+  z-index: 3;
+  font-size: 24px;
+}
+
+#sidebar.visible {
+  transform: translateX(-250px);
+  z-index: 2;
+}
+
+#sidebar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("Graphix/rotated_sidebar_image.png");
+  background-position: 320px;
+  opacity: 0.4;
+}
+
+#sidebar ul {
+  list-style: none;
+  position: relative;
+  top: 70px;
+  left: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar a {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Spoqa Han Sans", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+#sidebar a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#sidebar .subfield {
+  top: -10px;
+  margin-top: 0px;
+}
+
+#sidebar .subfield li a {
+  font-size: 20px;
+  color: black;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+#sidebar .subfield li a:hover {
+  color: gray;
+}
+
+#about_me {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Spoqa Han Sans", sans-serif;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#about_me:hover {
+  color: #555;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 20%;
+  width: 100%;
+  margin-bottom: 0;
+  border-top: 1px solid #ddd;
+  background-color: rgba(242.25, 242.25, 242.25);
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  z-index: 10;
+}
+footer p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  body,
+  html {
+    font-size: 14px;
+    font-family: Arial, Helvetica, Sans-serif, "Noto Serif KR", "Montserrat",
+      "Roboto";
   }
   header {
-    position: fixed;
-    top: 0;
-    height: 7%;
-    width: 100%;
-    border: none;
-    background-color: rgb(170,190,160);
-    z-index: 1000;
-    display: flex;
+    position: sticky;
+    background: rgb(170, 190, 160);
+    align-items: center;
+    
   }
   header a {
-    position: absolute;
-    padding-left: 20px;
-    padding-top: 11px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: normal;
-    font-family: 'Roboto';
-  }       
+    font-family: "Roboto";
+    font-size: 1rem;
+    top: 10%;
+  }
   header input {
     position: absolute;
-    top: 9px;
+    top: 10%;
     right: 70px;
     height: 60%;
     width: 15%;
     border-radius: 4px;
     border: 2px solid #ccc;
+    display: none;
   }
   #menu {
     position: absolute;
-    top: 8px;
-    right: 10px;
-    height: 30px;
-    width: 35px;
-    transition: transform 0.4s ease-in-out; 
-  }
-  #menu.visible {
-    transform: translateX(0);
-  }
-  #menu:hover {
-    cursor: pointer;
+    top: 15%;
+    border: none;
+    background-color: transparent;
   }
   .box {
-    position: relative;
-    margin-top: 70px;
-    margin-left: 20px;
-      height: 40%;
-      width: 95%;
-      border: none;
+    display: flex;
+    height: 30%;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    border: none;
   }
   .box::before {
-    content: '';
-    position: absolute;
+    content: "";
     height: 100%;
     width: 100%;
     background-image: url("Graphix/dall-e_image.jpg");
@@ -78,268 +423,229 @@ body,html {
     z-index: 1;
   }
   .background.visible {
-    width: 250px;
+    width: 0px;
   }
   h1 {
+    display: block;
     position: absolute;
-    left: 30px;
-    font-family: 'Montserrat';
-    font-size: 45px;
+    font-family: "Montserrat";
+    font-size: 130%;
     font-weight: bold;
-  }
-  .imagebox {
-    position: absolute;
-    height: 175px;
-    width: 150px;
-    margin-left: 50px;
-    margin-top: 125px;
-    border-radius:50%;
-    border: 5px solid rgb(134, 132, 137);
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .imagebox img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    left: 10%;
   }
   .introdox {
+    font-size: 70%;
     position: absolute;
-    height: 25%;
-    width: 55%;
-    margin-left: 250px;
-    margin-top: 210px;
-    font-family: 'Noto Serif KR',serif;
+    font-family: "Noto Serif KR", serif;
     font-weight: normal;
+    margin-top: 0;
+    margin-left: 0;
+    top: 65%;
+    left: 35%;
+  }
+
+  .imagebox {
+    position: absolute;
+    height: 35%;
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 20%;
+    border-radius: 50%;
+    border: 2px solid rgb(134, 132, 137);
+    overflow: hidden;
+    scale: 1.5;
   }
   .contact {
     position: absolute;
-    bottom:10px;
-    right:40px;
+    top: 55%;
+    left: 35%;
     display: flex;
     flex-direction: row;
-    gap:10px;
+    gap: 7.5%;
     transition: transform 0.4s ease-in-out;
-
-  }
-  .contact.visible {
-    transform: translateX(-250px);
   }
   .contact a {
     text-decoration: none;
     color: black;
-    font-size: 24px;
+    font-size: 18px;
     transition: transform 0.2s;
- 
   }
   .contact a:hover {
-    transform:scale(1.2);
-    color: #555
+    transform: scale(1.2);
+    color: #555;
   }
   .container {
     display: grid;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 0fr;
-    margin-top: 30px;
-    gap: 20px;
-    padding: 20px;
-    transition: grid-template-columns 0.4s ease-in-out;
-    }
-  .container.visible {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-columns: 2fr 2fr;
+    width: 90%;
+    padding: 2.5%;
   }
   .spec {
-    grid-column: 1 / 5;
-    font-family: 'Playfair Display', serif;
-    font-size: 35px;
+    grid-column: 1/3;
+    grid-row: 1;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     margin-left: 20px;
     color: rgb(50, 50, 50);
     margin-bottom: 10px;
-    }
+  }
+
+  .expr {
+    grid-column: 1/3;
+    grid-row: 2;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: rgb(70, 70, 70);
+  }
 
   .implex {
-    grid-column: 1 / 3;
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 24px;
-    font-weight: 500;
-    color: rgb(70, 70, 70);
-    }
+    grid-column: 1/2;
+    grid-row: 3;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: rgb(80, 80, 80);
+    margin-top: 10px;
+  }
+  .awards-internship {
+    grid-column: 2/3;
+    grid-row: 3;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: rgb(80, 80, 80);
+    margin-top: 10px;
+  }
 
   .coursework {
-    grid-column: 3 / 5;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: rgb(70, 70, 70);
-    }
-
-  .awards-internship,
-  .personal-blog-setup {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 18px;
+    grid-column: 1/3;
+    grid-row: 5;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1.2em;
     font-weight: 400;
     color: rgb(80, 80, 80);
     margin-top: 10px;
   }
-  .personal-blog-setup {
-        grid-column: 1/2;
-    }
-  .awards-internship {
-        grid-column: 2/3;
-    }
-
-  .cs-course,
-  .math-course {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: rgb(80, 80, 80);
-    margin-top: 10px;
-    }
 
   .cs-course {
-        grid-column: 3/4;
-    }
+    grid-column: 1/2;
+    grid-row: 6;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: rgb(80, 80, 80);
+    margin-top: 10px;
+  }
 
   .math-course {
-        grid-column: 4/5;
-    }
+    grid-column: 2/3;
+    grid-row: 6;
+    font-family: "Pretendard", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: rgb(80, 80, 80);
+    margin-top: 10px;
+  }
 
-    .recent-post {
-      grid-column: 1 / 5;
-      grid-row: 5 / 6;
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: bold;
-      text-align: left;
-      margin-left: 20px;
-      color: rgb(50, 50, 50);
-      margin-top: 20px;
-      border-top: 2px solid rgba(0, 0, 0, 0.1);
-      padding-top: 20px;
-    }
-    
-    .card-container {
-      grid-column: 1 / 5;
-      grid-row: 6 / 7;
-      font-family: 'Spoqa Han Sans',sans-serif;
-      display: flex;
-      justify-content: center;
-      gap: 200px; 
-      margin-top: 20px;
-    }
-    
-    .card {
-      width: 18rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .card:hover {
-      transform: translateY(-10px);
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    #sidebar {
-      position: fixed;
-      top: 0;
-      font-family: 'Spoqa Han Sans',sans-serif;
-      right: -250px;
-      height: 100%;
-      width: 250px;
-      border-radius: 10px;
-      transition: transform 0.4s ease-in-out;
-      z-index: 3;
-      font-size: 24px;
-    }
-    
-    #sidebar.visible {
-      transform: translateX(-250px);
-      z-index: 2;
-    }
-    
-    #sidebar::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-image: url("Graphix/rotated_sidebar_image.png");
-      background-position: 320px;
-      opacity: 0.4;
-    }
-    
-    #sidebar ul {
-      list-style: none;
-      position: relative;
-      top: 70px;
-      left: 40px;
-      padding: 0;
-      margin: 0;
-    }
-    
-    #sidebar a {
-      display: block;
-      margin-bottom: 20px;
-      font-family: 'Spoqa Han Sans',sans-serif;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      transition: transform 0.2s ease;
-    }
-    
-    #sidebar a:hover {
-      cursor: pointer;
-      transform: scale(1.2);
-    }
-    
-    #sidebar .subfield {
-      top: -10px;
-      margin-top: 0px;
-    }
-    
-    #sidebar .subfield li a {
-      font-size: 20px; 
-      color: black;
-      font-weight: normal;
-      margin-bottom: 10px; 
-    }
-    
-    #sidebar .subfield li a:hover {
-      color: gray; 
-    }
-    
-  #about_me {
+  .recent-post {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    color: rgb(50, 50, 50);
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  .card {
+    width: 300px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-size: 24px;
+    z-index: 1000;
+    opacity: 1; 
+    transform: translateX(-100%); 
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+  #sidebar::before {
+    background-image: none;
+    opacity: 1;
+    background-color: #5D737E;
+  }
+
+  #sidebar.visible {
+    opacity: 1;
+    background-image: none;
+    transform: translateX(0);
+  }
+  #sidebar a {
     display: block;
     margin-bottom: 20px;
-    font-family: 'Spoqa Han Sans',sans-serif;
-    background-color: transparent;
-    border: none;
-    color: black;
-    font-size: 30px;
+    font-family: "Spoqa Han Sans", sans-serif;
+    text-decoration: none;
+    color: #E0E0E0;
     font-weight: bold;
-    cursor: pointer;
+    transition: color 0.3s ease-in-out;
   }
-  #about_me:hover {
-    color: #555;
+  #sidebar .subfield li a {
+    font-size: 20px;
+    color: #E0E0E0;
+    font-weight: normal;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
   }
+  #sidebar a:active {
+    color: #FFC482;
+  }
+
   footer {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 20%;
+    height: 10%;
     width: 100%;
     margin-bottom: 0;
     border-top: 1px solid #ddd;
     background-color: rgba(242.25, 242.25, 242.25);
-    font-family: 'Roboto',sans-serif;
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 8px;
     font-weight: 400;
     z-index: 10;
   }
-  footer p {
-    margin: 0;
-    color: rgba(0,0,0,0.5);
-  }
+}
+
+@media (max-width: 1024px) {
+  
+}
