@@ -377,6 +377,7 @@ footer p {
     position: absolute;
     top: 15%;
     border: none;
+    font-size: 150%;
     background-color: transparent;
   }
   .box {
