@@ -1,4 +1,5 @@
 export const flinks = [
+    'linear_model_ch_1.md',
     'ps_boj_11399.md',
     'ps_boj_1003.md',
     'ps_boj_10816.md',
