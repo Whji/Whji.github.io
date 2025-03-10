@@ -2,59 +2,70 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-44BZTQFWJV');
-</script>
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js">
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-44BZTQFWJV");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Whji's Field>CS Field>PS Study</title>
-    <link rel="stylesheet" href="../fonts.css"/>
-    <link rel="stylesheet" href="post_detail_style.css"/>
+    <link rel="stylesheet" href="../fonts.css" />
+    <link rel="stylesheet" href="post_detail_style.css" />
   </head>
 
   <body>
     <!-- header -->
     <header>
       <a href="../index.html">Whji's Field</a>
-      <input type="search" placeholder="Search...(not functional yet)">
+      <input type="search" placeholder="Search...(not functional yet)" />
       <button type="button" onclick="goBack()">Back</button>
     </header>
 
-
     <div id="subjectbox">
-        <div id="subject">Loading...</div>
-        <div id="date">Loading...</div>
-        <div id="statistics">조회수 Loading...</div>
-        <div id="category">분류 Loading...</div>
-        <hr/>
+      <div id="subject">Loading...</div>
+      <div id="date">Loading...</div>
+      <div id="statistics">조회수 Loading...</div>
+      <div id="category">분류 Loading...</div>
+      <hr />
     </div>
-
-
-
 
     <div id="contentbox">
-        <p>Loading ...</p>
+      <p>Loading ...</p>
     </div>
-  
+
     <footer>
-      <p>Copyright © 지우현 All rights reserved.<br/>
-        Built with <a href="https://getbootstrap.com/" target="_blank" style="color: inherit; text-decoration: underline;">Bootstrap</a> and custom illustrations.<br>
-        Design & Development by <strong>지우현</strong>.</p>
+      <p>
+        Copyright © 지우현 All rights reserved.<br />
+        Built with
+        <a
+          href="https://getbootstrap.com/"
+          target="_blank"
+          style="color: inherit; text-decoration: underline"
+          >Bootstrap</a
+        >
+        and custom illustrations.<br />
+        Design & Development by <strong>지우현</strong>.
+      </p>
     </footer>
-
-
 
     <!-- javascript -->
     <script type="module">
       import { md_renderer } from "./md_renderer.js";
-    
+
       const md_url = new URLSearchParams(window.location.search);
       const target_md_url = md_url.get("markdown");
       const contentbox = document.querySelector("#contentbox");
@@ -62,7 +73,7 @@
       const date = document.querySelector("#date");
       const category = document.querySelector("#category");
       const header = document.querySelector("header");
-    
+
       (async () => {
         try {
           const { metadata, htmlcontent } = await md_renderer(target_md_url);
@@ -71,20 +82,27 @@
           category.textContent = metadata.category || "No Category";
           contentbox.innerHTML = htmlcontent;
           const item = document.createElement("a");
-           item.innerHTML = `> Post: ${metadata.title}`;
+          item.innerHTML = `> Post: ${metadata.title}`;
           header.appendChild(item);
         } catch (error) {
           contentbox.innerHTML = `<p>Error loading content: ${error.message}</p>`;
           console.error(error);
         }
       })();
-      
-
     </script>
     <script>
       const backButton = document.querySelector("#backButton");
       function goBack() {
         window.history.back();
+      }
+    </script>
+    <script>
+      if (window.MathJax) {
+        MathJax.typesetPromise()
+          .then(() => {
+            console.log("MathJax 수식 렌더링 완료");
+          })
+          .catch((err) => console.log("MathJax 렌더링 오류", err));
       }
     </script>
   </body>
