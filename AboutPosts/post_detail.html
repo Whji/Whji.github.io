@@ -14,10 +14,33 @@
       gtag("js", new Date());
       gtag("config", "G-44BZTQFWJV");
     </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"]
+          ]
+        },
+        startup: {
+          ready: function () {
+            MathJax.startup.defaultReady();
+            console.log("MathJax Ready");
+          }
+        }
+      };
+    </script>
     <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-    <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Whji's Field>CS Field>PS Study</title>
     <link rel="stylesheet" href="../fonts.css" />
@@ -81,6 +104,13 @@
           const item = document.createElement("a");
           item.innerHTML = `> Post: ${metadata.title}`;
           header.appendChild(item);
+          if (window.MathJax) {
+            MathJax.typesetPromise()
+              .then(() => {
+                console.log("MathJax 수식 렌더링 완료");
+              })
+              .catch((err) => console.log("MathJax 렌더링 오류", err));
+          }
         } catch (error) {
           contentbox.innerHTML = `<p>Error loading content: ${error.message}</p>`;
           console.error(error);
@@ -91,15 +121,6 @@
       const backButton = document.querySelector("#backButton");
       function goBack() {
         window.history.back();
-      }
-    </script>
-    <script>
-      if (window.MathJax) {
-        MathJax.typesetPromise()
-          .then(() => {
-            console.log("MathJax 수식 렌더링 완료");
-          })
-          .catch((err) => console.log("MathJax 렌더링 오류", err));
       }
     </script>
   </body>
