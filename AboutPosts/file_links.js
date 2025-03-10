@@ -1,4 +1,5 @@
 export const flinks = [
+    'cs_special_lect_0310.md',
     'linear_model_ch_1.md',
     'ps_boj_11399.md',
     'ps_boj_1003.md',
