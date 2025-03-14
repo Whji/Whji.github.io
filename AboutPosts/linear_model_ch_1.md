@@ -1,7 +1,7 @@
 ---
-title: "Linear Model Ch.1"
-date: "2025-03-04"
-category: "CS Field > Coursework > Linear Model"
+title: Linear Model Ch.1
+date: 2025-03-04
+category: Math Field > Coursework > Linear Model
 ---
 
 ### 개요  
