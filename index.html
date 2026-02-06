@@ -1,216 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-44BZTQFWJV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-44BZTQFWJV');
-</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Whji's Field</title>
-    <link rel="stylesheet" href="fonts.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <script src="https://kit.fontawesome.com/ca154a8af0.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <meta name="description" content="지우현의 개인 블로그 - KAIST 전산학과/수리과학과 학생, 통계를 좋아하는 개발자.">
-    <meta name="keywords" content="지우현, Ji Woohyun, Ji Woohyeon, Woohyeon Ji, Woohyun Ji, KAIST SoC, kaist, KAIST, 통계, 컴퓨터 과학, 수학, whji, whji's field, Whji, Whji's Field, Whji's field">
-    <meta name="author" content="지우현, Whji, whji, Woohyeon Ji, Woohyun Ji, Ji Woohyun, Ji Woohyeon">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whji's Field</title>
 
-  </head>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <body>
-    <!-- header -->
-    <header>
-      <a href="index.html">Whji's Field</a>
-      <input type="search" placeholder="Search...(not functional yet)">
-      <button id="menu">&#9776</button>
-    </header>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/ca154a8af0.js" crossorigin="anonymous"></script>
 
+  <meta name="description" content="Whji's Field – Under renovation.">
+</head>
 
-    <!-- mainbox -->
-    <div class="box">   
-      <h1>Woohyeon's Field</h1>
-      <div class="background"></div>
-      
+<body class="bg-neutral-950 text-neutral-200 flex items-center justify-center min-h-screen">
 
-      <div class="imagebox">
-        <img src="Graphix/whji_image.jpg" alt="Profile Photo">
-      </div>
-      <div class="introdox">
-        <p>KAIST 전산학부/수리과학과 복수전공 중<br/>통계를 좋아하는 대학생</p>
-      </div>
-      <div class="contact">
-        <a href="https://github.com/Whji" target="_blank">
-        <i class="fa-brands fa-github" target="_blank"></i>
-        </a>
-        <a href="https://www.instagram.com/whjjjji" target="_blank">
-        <i class="fa-brands fa-instagram" target="_blank"></i> 
-        </a>
-        <a href="mailto:jiwoohyun@kaist.ac.kr" target="_blank">
-        <i class="fa-regular fa-envelope" target="_blank"></i> 
-        </a>
-      </div>
+  <main class="text-center px-6 max-w-xl">
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">
+      Whji's Field
+    </h1>
+
+    <p class="mt-6 text-neutral-400 leading-relaxed">
+      This site is currently under renovation.<br />
+      Coming soon!
+    </p>
+
+    <div class="mt-10 flex justify-center space-x-6 text-xl">
+      <a href="https://github.com/Whji" target="_blank" class="hover:text-white transition">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="mailto:jiwoohyun@kaist.ac.kr" class="hover:text-white transition">
+        <i class="fa-regular fa-envelope"></i>
+      </a>
     </div>
 
-    <div class="container">
-      <div class="spec">Specifications</div>
-      <div class="expr">개발 경험</div>
-      <div class="coursework">Courseworks</div>
-      <div class="implex">
-        Github Blog Setup
-        <ul>
-          <li>개인 블로그 디자인 및 개설</li>
-          <li>github page 이용</li> 
-          <li>html/css/javascript 기반 구현</li> 
-        </ul>
-        Custom Tutoring Aid
-        <ul>
-          <li>개별 오답노트 생성기 구현</li>
-          <li>웹 기반 제작(추후 확장 고려중)</li>
-          <li>Python기반 백엔드 구현</li>
-        </ul>
-      </div>
-      <div class="awards-internship">
-        Awards & Internships
-        <li>25.2~25.6 <a href="https://haywse.github.io/" target="_blank">하우석 교수님</a> lab</br> 개별연구</li>
-      </div>
-      <div class="cs-course">
-      CS Courses
-        <ul>
-          <li>CS206 데이터 구조</li>
-          <li>CS230 시스템 프로그래밍</li>
-          <li>CS300 알고리즘 개론</li>
-          <li>CS320 프로그래밍 언어</li>
-          <li>CS311 전산기조직</li>
-          <li>CS376 기계학습</li>
-        </ul>
-      </div>
-      <div class="math-course">
-      Math Courses
-        <ul>
-          <li>MAS241&242 해석학 1 & 2</li>
-          <li>MAS212 선형대수학</li>
-          <li>MAS275 이산수학</li>
-          <li>MAS355 수리통계학</li>
-          <li>MAS455 선형모형</li>
-        </ul>
-      </div>
+    <div class="mt-14 text-sm text-neutral-600">
+      © Woohyun Ji · KAIST CS / Math
     </div>
-    <div class="recent-post">
-      Recent Posts
-    </div>
-    <div class="card-container"></div>
+  </main>
 
-    <!-- sidebar -->
-    <nav id="sidebar">
-      <ul>
-        <li><a href="CSField/cs_index.html">CS Field</a>
-          <ul class="subfield">
-            <li><a href="CSField/PortfolioDiary/portfolio_diary_index.html">개발 일지</a></li>
-            <li><a href="CSField/PSStudy/ps_study_index.html">PS study</a></li>
-            <li><a href="CSField/Coursework/coursework_index.html">Coursework</a></li>
-          </ul>
-        </li>
-        <li><a href="MathField/math_index.html">Math Field</a>
-          <ul class="subfield">
-            <li><a href="MathField/Coursework/coursework_index.html">Coursework</a></li>
-            <li><a href="MathField/AboutStatistics/research_field_index.html">Statistics</a></li>
-          </ul>
-        </li>
-        <!--My diary는 내 네이버 블로그로 연결__그냥 블로그는 따로 빼는게 나을듯
-        <li><a href="https://blog.naver.com/thinkingnotewithwhj">My Diary</a>
-          <!--
-          <ul class="subfield">
-            <li><a href="MyDiary/Diary/diary_index.html">일기/끄적끄적</a></li>
-            <li><a href="MyDiary/Hobby/hobby_index.html">취미생활</a></li>
-          </ul>
-          -->
-        </li>
-        <div id="aboutme">
-          <a href="about_me.html">About Me</a>
-        </div>
-      </ul>
-    </nav>
-  
-    <footer>
-      <p>Copyright © 지우현 All rights reserved.<br/>
-        Built with <a href="https://getbootstrap.com/" target="_blank" style="color: inherit; text-decoration: underline;">Bootstrap</a> and custom illustrations.<br>
-        Design & Development by <strong>지우현</strong>.</p>
-    </footer>
-
-
-
-    <!-- javascript -->
-    <script type="module">
-          import { flinks } from "./AboutPosts/file_links.js";
-    import { md_renderer } from "./AboutPosts/md_renderer.js";
-
-    const cardContainer = document.querySelector(".card-container");
-    (async () => {
-  try {
-    const postData = await Promise.all(
-      flinks.map(async (post) => {
-        console.log(`the post name is: ${post}`);
-        return await md_renderer(post);
-      })
-    );
-    const recent_twoposts = postData.slice(0, 2);
-
-    recent_twoposts.forEach(({ metadata, htmlcontent }, index) => {
-      const card = document.createElement("div");
-      card.classList.add("card", "mb-3");
-      card.style.maxWidth = "540px";
-      card.style.cursor = "pointer";
-
-      const postLink = `./AboutPosts/post_detail.html?markdown=${flinks[index]}`;
-      card.addEventListener("click", () => {
-        window.location.href = postLink;
-      });
-
-      card.innerHTML = `
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Post Image ${index + 1}">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">${metadata.title || "Untitled Post"}</h5>
-              <p class="card-text">${metadata.description || htmlcontent.slice(0, 100)}...</p>
-            </div>
-          </div>
-        </div>
-      `;
-
-      cardContainer.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Error loading recent posts:", error);
-  }
-})();
-
-
-      let menu = document.querySelector("#menu");
-      let sidebar = document.querySelector("#sidebar");
-      let mainbox = document.querySelector(".box");
-      let contact = document.querySelector(".contact");
-      let background = document.querySelector(".background");
-      let container = document.querySelector(".container");
-      const imgbox = document.querySelector(".imagebox");
-      imgbox.setAttribute("data-link","./about_me.html");
-      imgbox.addEventListener("click",() => {
-        const link = imgbox.getAttribute("data-link");
-        window.location.href = link;
-      });
-      menu.addEventListener("click",()=>{
-        menu.classList.toggle("visible");
-        sidebar.classList.toggle("visible");
-        contact.classList.toggle("visible");
-        background.classList.toggle("visible");
-        container.classList.toggle("visible");
-      });
-    </script>
-  </body>
+</body>
 </html>
